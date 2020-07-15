@@ -49,6 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Resetting the form value to null
     document.querySelector("#new-task-description").value = null;
     document.querySelector("#user").value = null;
+    // Resetting hidden fields
+    form.querySelector("#userOriginal")["value"] = "";
+    form.querySelector("#descriptionOriginal")["value"] = "";
+    form.querySelector("#priorityOriginal")["value"] = "";
 
   }
 
@@ -60,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     else if (e.target.className == 'x-button') {
       e.target.parentNode.remove();
+      e.preventDefault();
     }
     else if (e.target.className == 'e-button') {
       // Select parent node
